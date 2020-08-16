@@ -380,13 +380,13 @@ static int extensionSupportedWGL(const char* extension)
     return _glfwStringInExtensionString(extension, extensions);
 }
 
-static GLFWglproc getProcAddressWGL(const char* procname)
+static void* getProcAddressWGL(const char* procname)
 {
-    const GLFWglproc proc = (GLFWglproc) wglGetProcAddress(procname);
+    const void* proc = (void*) wglGetProcAddress(procname);
     if (proc)
         return proc;
 
-    return (GLFWglproc) GetProcAddress(_glfw.wgl.instance, procname);
+    return (void*) GetProcAddress(_glfw.wgl.instance, procname);
 }
 
 static void destroyContextWGL(_GLFWwindow* window)

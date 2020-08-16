@@ -1259,20 +1259,6 @@ extern "C" {
  * GLFW API types
  *************************************************************************/
 
-/*! @brief Client API function pointer type.
- *
- *  Generic function pointer used for returning client API function pointers
- *  without forcing a cast from a regular pointer.
- *
- *  @sa @ref context_glext
- *  @sa @ref glfwGetProcAddress
- *
- *  @since Added in version 3.0.
- *
- *  @ingroup context
- */
-typedef void (*GLFWglproc)(void);
-
 /*! @brief Vulkan API function pointer type.
  *
  *  Generic function pointer used for returning Vulkan API function pointers
@@ -5806,7 +5792,7 @@ GLFWAPI int glfwExtensionSupported(const char* extension);
  *
  *  @ingroup context
  */
-GLFWAPI GLFWglproc glfwGetProcAddress(const char* procname);
+GLFWAPI void* glfwGetProcAddress(const char* procname);
 
 /*! @brief Returns whether the Vulkan loader and an ICD have been found.
  *

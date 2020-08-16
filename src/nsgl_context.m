@@ -96,13 +96,13 @@ static int extensionSupportedNSGL(const char* extension)
     return GLFW_FALSE;
 }
 
-static GLFWglproc getProcAddressNSGL(const char* procname)
+static void* getProcAddressNSGL(const char* procname)
 {
     CFStringRef symbolName = CFStringCreateWithCString(kCFAllocatorDefault,
                                                        procname,
                                                        kCFStringEncodingASCII);
 
-    GLFWglproc symbol = CFBundleGetFunctionPointerForName(_glfw.nsgl.framework,
+    void* symbol = CFBundleGetFunctionPointerForName(_glfw.nsgl.framework,
                                                           symbolName);
 
     CFRelease(symbolName);

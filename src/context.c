@@ -740,7 +740,7 @@ GLFWAPI int glfwExtensionSupported(const char* extension)
     return window->context.extensionSupported(extension);
 }
 
-GLFWAPI GLFWglproc glfwGetProcAddress(const char* procname)
+GLFWAPI void* glfwGetProcAddress(const char* procname)
 {
     _GLFWwindow* window;
     assert(procname != NULL);

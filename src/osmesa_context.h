@@ -45,7 +45,7 @@ typedef void (GLAPIENTRY * PFN_OSMesaDestroyContext)(OSMesaContext);
 typedef int (GLAPIENTRY * PFN_OSMesaMakeCurrent)(OSMesaContext,void*,int,int,int);
 typedef int (GLAPIENTRY * PFN_OSMesaGetColorBuffer)(OSMesaContext,int*,int*,int*,void**);
 typedef int (GLAPIENTRY * PFN_OSMesaGetDepthBuffer)(OSMesaContext,int*,int*,int*,void**);
-typedef GLFWglproc (GLAPIENTRY * PFN_OSMesaGetProcAddress)(const char*);
+typedef void* (GLAPIENTRY * PFN_OSMesaGetProcAddress)(const char*);
 #define OSMesaCreateContextExt _glfw.osmesa.CreateContextExt
 #define OSMesaCreateContextAttribs _glfw.osmesa.CreateContextAttribs
 #define OSMesaDestroyContext _glfw.osmesa.DestroyContext

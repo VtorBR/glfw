@@ -250,13 +250,13 @@ static int extensionSupportedEGL(const char* extension)
     return GLFW_FALSE;
 }
 
-static GLFWglproc getProcAddressEGL(const char* procname)
+static void* getProcAddressEGL(const char* procname)
 {
     _GLFWwindow* window = _glfwPlatformGetTls(&_glfw.contextSlot);
 
     if (window->context.egl.client)
     {
-        GLFWglproc proc = (GLFWglproc) _glfw_dlsym(window->context.egl.client,
+        void* proc = (void*) _glfw_dlsym(window->context.egl.client,
                                                    procname);
         if (proc)
             return proc;

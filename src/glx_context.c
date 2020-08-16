@@ -218,7 +218,7 @@ static int extensionSupportedGLX(const char* extension)
     return GLFW_FALSE;
 }
 
-static GLFWglproc getProcAddressGLX(const char* procname)
+static void* getProcAddressGLX(const char* procname)
 {
     if (_glfw.glx.GetProcAddress)
         return _glfw.glx.GetProcAddress((const GLubyte*) procname);

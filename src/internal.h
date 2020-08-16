@@ -80,7 +80,7 @@ typedef void (* _GLFWmakecontextcurrentfun)(_GLFWwindow*);
 typedef void (* _GLFWswapbuffersfun)(_GLFWwindow*);
 typedef void (* _GLFWswapintervalfun)(int);
 typedef int (* _GLFWextensionsupportedfun)(const char*);
-typedef GLFWglproc (* _GLFWgetprocaddressfun)(const char*);
+typedef void* (* _GLFWgetprocaddressfun)(const char*);
 typedef void (* _GLFWdestroycontextfun)(_GLFWwindow*);
 
 #define GL_VERSION 0x1f02
